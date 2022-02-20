@@ -28,10 +28,11 @@ const Navbar = ({ onAddToFirstStage }: NavbarProps) => {
       <div className={styles.wrapper}>
         <h1>🎯 Board</h1>
         <div className={styles.container}>
-          <form onSubmit={onSubmit} onKeyPress={onKeyPress}>
+          <form onSubmit={onSubmit}>
             <input
               data-cy="input"
               value={inputValue}
+              onKeyPress={onKeyPress}
               onChange={(e) => setValue(e.target.value)}
               className={styles.input}
               placeholder="Type your task here..."
