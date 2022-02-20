@@ -1,46 +1,81 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+# Development
 
 In the project directory, you can run:
 
-### `yarn start`
+## `yarn install` <br />
 
-Runs the app in the development mode.\
+then
+
+## `yarn start`
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Testing
 
-### `yarn test`
+to run unit testing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `yarn test`
 
-### `yarn build`
+to run end to end testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `yarn cypress`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Delopyment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+you can check it here [https://assembly-line-tool.netlify.app/](https://assembly-line-tool.netlify.app/)
 
-### `yarn eject`
+# Libraries
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [cypress](https://www.npmjs.com/package/cypress) - for end to end testing
+- [@axe-core/react](https://www.npmjs.com/package/@axe-core/react) - to test the accessability
+- [sass](https://www.npmjs.com/package/sass) - for styling
+- [nanoid](https://www.npmjs.com/package/nanoid) - to generate unique id
+- [Eslint](https://eslint.org/)
+- [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# My Approach
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- created custom hook called `useAssemblyLine` to seperate the logic from the UI, it handle adding the task in the first stage, move it forward and backward.
+- divided the screem to separates components:<br>
+  `Navbar` to display the input.<br>
+  `AssemblytItem` to display the task item and stage item.<br>
+  `AssemblyLine` to loop through all stages and display it.<br>
+- I used sass and created variables for colors, fonts and mixins to reuse the style code.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# unit testing
 
-## Learn More
+created unit testing to test the custom hook, I checked about 7 cases:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1- structuring the stages object which should be like {Idea: [], Development:[]}.<br>
+2- adding the task at the top of the first stage.<br>
+3- moving task to next stage when clicking left.<br>
+4- removing the task from the current stage when moving it to the next stage.<br>
+5- removing the task from the last stage when clicking left.<br>
+6- removing the task from the first stage when clicking right.<br>
+7- removing the task from the current stage when moving it to the previous stage.<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# e2e testing
+
+I created e2e testing to test the user behaviour, here are my test cases:
+
+1- check rendering the stages.
+2- check creating two tasks and inserting it to the first stage.
+3- check moving the tasks through all stages forward and backward.
+4- check removing the tasks from the last and first stage.
+
+# Idea to improve UX
+
+1- make the task item draggable, it'd be more understandable for the user instead of clicking right and left, also we can make a simple tutorial at the first time user open the application to give him more insights about how he can move the items.
+
+2- add button for each stage so user can directly add the new task to specific stage.<br>
+
+3- add delete icon in idea and deployment stages to delete the task from it as it more desciptive than clicking right or left.<br>
+
+# ScreenShots
+
+Desktop
+![A screenshot of Desktop Screen](screenshots/desktop.png)
+Tablet  
+![A screenshot of Tablet Screen](screenshots/tablet.png)
+Mobile  
+![A screenshot of mobile Screen](screenshots/mobile.png)
