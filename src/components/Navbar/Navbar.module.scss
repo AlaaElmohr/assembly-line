@@ -1,0 +1,60 @@
+@import 'themes/vars.module';
+
+.nav {
+  background-color: $white;
+  @include flex(row, 'center');
+  height: 80px;
+  border-bottom: 3px solid $light-grey;
+
+  .wrapper {
+    width: 80%;
+    padding: 20px;
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container {
+    @include flex(row);
+
+    .input {
+      width: 200px;
+      height: 40px;
+      border: 1px solid $light-grey;
+      border-radius: $border-radius;
+      background-color: $primary-bg;
+      padding: 0px 20px;
+      margin-right: 20px;
+
+      &:focus {
+        border: 1px solid $white;
+        outline: none;
+      }
+    }
+
+    .btn {
+      background-color: $pruple;
+      border-radius: $border-radius;
+      border-width: 0;
+      color: $white;
+      height: 40px;
+      width: 150px;
+    }
+  }
+
+  @include mobile {
+    height: 120px;
+    .wrapper {
+      width: 100%;
+      @include flex(column);
+    }
+    .container {
+      margin-top: 20px;
+    }
+  }
+  @include tablet {
+    .wrapper {
+      width: 100%;
+    }
+  }
+}

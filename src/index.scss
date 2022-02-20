@@ -1,0 +1,58 @@
+@import 'themes/vars.module.scss';
+
+html {
+  font-size: $font-size;
+  overflow-x: hidden;
+  height: 100%;
+  background: $primary-bg;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: $font-regular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+h4 {
+  font-size: calc(0.1vw + 1rem);
+}
+
+button,
+input {
+  font-size: calc(0vw + 1rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $dark-text;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: $font-bold;
+}
+
+h4,
+h5,
+h6 {
+  font-family: $font-medium;
+}
+
+input,
+button {
+  font-family: unset;
+  border: unset;
+}

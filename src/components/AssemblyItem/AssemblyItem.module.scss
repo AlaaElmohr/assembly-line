@@ -1,0 +1,26 @@
+@import 'themes/vars.module';
+
+.container {
+  background-color: $white;
+  border-radius: $border-radius;
+  margin: 20px 0px;
+  padding: 20px;
+  width: calc(100% - 20px);
+  height: 70px;
+  overflow: scroll;
+  @include tablet {
+    width: calc(100%);
+  }
+}
+
+.header {
+  border-top-width: 2px;
+  border-top-style: solid;
+}
+
+@include mobile {
+  .header {
+    border-width: 2px;
+    border-style: solid;
+  }
+}

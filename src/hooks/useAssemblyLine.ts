@@ -3,15 +3,9 @@ import { nanoid } from 'nanoid';
 /*
 local files
 */
-import {
-  AssemblyLineParams,
-  AddToFirstStage,
-  OnMoveTaskParams,
-  OnMoveParams,
-  Task,
-  Stage,
-  Stages
-} from './types';
+import { AssemblyLineParams, OnMoveParams } from './types';
+import { Task, Stage, Stages, AddToFirstStage, OnMoveTaskParams } from 'types';
+
 import { BACKWARD } from 'config';
 
 const useAssemblyLine: AssemblyLineParams = (data) => {

@@ -1,0 +1,33 @@
+@import 'themes/vars.module';
+
+.container {
+  @include flex();
+  justify-content: space-around;
+  padding: 30px 0;
+  column-gap: 20px;
+}
+
+.stage_wrapper {
+  width: calc(25%);
+}
+
+@include mobile {
+  .container {
+    display: block;
+  }
+  .stage_wrapper {
+    width: calc(100%);
+    border-bottom: 2px solid $light-grey;
+  }
+}
+
+@include tablet {
+  .container {
+    column-gap: 0px;
+    flex-wrap: wrap;
+  }
+  .stage_wrapper {
+    width: calc(40%);
+    border-bottom: 2px solid $light-grey;
+  }
+}
