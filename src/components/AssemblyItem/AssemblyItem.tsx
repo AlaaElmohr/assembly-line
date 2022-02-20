@@ -19,12 +19,13 @@ const AssemblyItem = ({ isHeader, title, onMoveTask }: AssemblyItemProps) => {
 
   return (
     <button
+      data-cy={isHeader ? 'stage' : 'task'}
       disabled={isHeader}
       onClick={onMove}
       onContextMenu={onMove}
       className={cn(styles.container, { [styles.header]: isHeader })}
       style={isHeader ? { borderColor: helpers.getColor(title) } : { borderWidth: 0 }}>
-      <h4>{title}</h4>
+      {title}
     </button>
   );
 };

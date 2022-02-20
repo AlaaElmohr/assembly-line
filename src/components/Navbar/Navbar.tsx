@@ -11,9 +11,11 @@ const Navbar = ({ onAddToFirstStage }: NavbarProps) => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    onAddToFirstStage(inputValue);
-    //reset input
-    setValue('');
+    if (inputValue.trim()) {
+      onAddToFirstStage(inputValue.trim());
+      //reset input
+      setValue('');
+    }
   };
 
   const onKeyPress = (e: React.KeyboardEvent) => {
@@ -28,12 +30,13 @@ const Navbar = ({ onAddToFirstStage }: NavbarProps) => {
         <div className={styles.container}>
           <form onSubmit={onSubmit} onKeyPress={onKeyPress}>
             <input
+              data-cy="input"
               value={inputValue}
               onChange={(e) => setValue(e.target.value)}
               className={styles.input}
               placeholder="Type your task here..."
             />
-            <button type="submit" className={styles.btn}>
+            <button type="submit" data-cy="submit" className={styles.btn}>
               + Add New Task
             </button>
           </form>
