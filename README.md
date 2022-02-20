@@ -58,10 +58,10 @@ created unit testing to test the custom hook, I checked about 7 cases:
 
 I created e2e testing to test the user behaviour, here are my test cases:
 
-1- check rendering the stages.
-2- check creating two tasks and inserting it to the first stage.
-3- check moving the tasks through all stages forward and backward.
-4- check removing the tasks from the last and first stage.
+1- check rendering the stages.<br>
+2- check creating two tasks and inserting it to the first stage.<br>
+3- check moving the tasks through all stages forward and backward.<br>
+4- check removing the tasks from the last and first stage.<br>
 
 # Idea to improve UX
 
